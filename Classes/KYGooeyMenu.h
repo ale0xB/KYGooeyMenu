@@ -35,6 +35,9 @@
 @property(nonatomic,strong)UIView *mainView;
 
 
+@property (nonatomic, strong) UIView *containerView;
+
+
 //添加菜单图标
 @property(nonatomic,strong)NSMutableArray *menuImagesArray;
 

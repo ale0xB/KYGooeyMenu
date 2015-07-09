@@ -9,10 +9,10 @@
 #import "KYGooeyMenu.h"
 #import "Cross.h"
 #import "KYSpringLayerAnimation.h"
+#import "KYContainerView.h"
 
 @interface KYGooeyMenu()
 
-@property(nonatomic,strong)UIView *containerView;
 
 @end
 
@@ -51,7 +51,8 @@
         PointsDic = [NSMutableDictionary dictionary];
         menuColor = themeColor;
         isOpened = NO;
-        self.containerView = controller.view;
+        self.containerView = [[KYContainerView alloc] initWithFrame:controller.view.frame];
+        [controller.view addSubview:self.containerView];
         [self.containerView addSubview:self];
         once = NO;
         [self addSomeViews];
@@ -332,7 +333,6 @@
     }
     
 }
-
 
 /*******方案一，失败，仅供参考********
 -(void)updateLayerPath{
